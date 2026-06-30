@@ -1,0 +1,105 @@
+body {
+    background-image: linear-gradient(60deg, #FAFAFA 0%, transparent 90%);
+    height: 80px;
+    width: 300px;
+    font-family: Verdana, serif;
+}
+
+#title {
+    min-width: 100%;
+    horiz-align : center;
+    display: inline-block;
+    vertical-align :bottom;
+    text-align: center;
+}
+
+#icon {
+    horiz-align : center;
+    display: inline-block;
+    vertical-align :middle;
+    width:50px;
+    height:45px;
+}
+
+#banner-label {
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+#banner-preferences {
+    margin-bottom: 15px;
+    margin-left: 5px;
+    text-align: center;
+    appearance: none;
+    @supports (appearance: base-select) {
+        &,
+        &::picker(select) {
+            appearance: base-select;
+            padding: 0;
+            margin-top: 5px;
+            border: 2px solid transparent;
+            background: white;
+            font-weight: 400;
+        }
+    }
+    border-radius: 0px;
+    background-color:#FFFFFF;
+    border-color:#FFFFFF;
+    color: #60666d;
+    box-shadow: 5px 10px 30px -9.5px;
+    padding: 10px 7px 10px 7px;
+}
+
+option {
+
+    margin-left: 5px;
+    border-radius: 0px;
+    cursor: pointer;
+    transition-property: color, background;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    &:hover {
+        background-color: #F2F2F2;
+    }
+    &::checkmark {
+        display: none;
+    }
+    padding: 4px 1px 4px 1px;
+    appearance: none;
+    @supports (appearance: base-select) {
+        &
+    }
+    background-color:#FFFFFF;
+    border-color:#FFFFFF;
+    color: #60666d;
+}
+
+#options {
+    /*min-width: 100%;*/
+    background-color: #160075;
+    display: inline-block;
+    horiz-align: center;
+    height:40px;
+    width: 275px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    box-shadow: 5px 10px 30px -9.5px;
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+
+#options:active {
+    cursor: pointer;
+    background-color: rgb(32, 172, 90);
+    transform: translateX(2px);
+}
+
+hr {
+    border-top:   1px dashed  black;
+    margin-bottom: 15px;
+
+}
