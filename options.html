@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        body {
+            padding: 20px;
+            font-family: Verdana, serif;
+        }
+        label {
+            display: block;
+            width: 800px;
+            padding: 0 0 20px;
+        }
+        #whitelist {
+            box-shadow: 4px 5px 5px -10px;
+            border-color: lightgray;
+            ::placeholder {
+                color: #FEFEFE;
+                opacity: 0.1;
+                font-size: 12px;
+            }
+            ::-webkit-input-placeholder {
+                color: #FEFEFE;
+                opacity: 0.1;
+                font-size: 12px;
+            }
+            width: 100%;
+            height: 150px;
+        }
+        #status_indicators_label {
+            text-align: center;
+        }
+        h1 {
+            position:relative;
+            display: inline;
+            vertical-align :middle;
+            horiz-align: center;
+            text-align:center;
+        }
+        #icon {
+            padding-left:10px;
+            position:relative;
+            horiz-align : center;
+            display: inline;
+            vertical-align :middle;
+            width:50px;
+            height:45px;
+            margin-bottom:5px;
+            margin-top:5px;
+        }
+        #save {
+            background-color: #160075;
+            padding: 12px 9px 12px 9px;
+            color: white;
+            border-color: transparent;
+            box-shadow: 5px 30px 30px -20px;
+        }
+        #save:active {
+            background-color: rgb(32, 172, 90);
+            transform: translateX(2px);
+        }
+        #status_indicators {
+            accent-color: lightgray;
+        }
+
+        #title-headings {
+            background-size: 100%;
+            position: relative;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin:0;
+            max-width:100%;
+            width:100%;
+            padding-bottom: 18px;
+            padding-top:18px;
+            color: white;
+            min-width:100%;
+            min-height:100%;
+            text-align: center;
+            background-color: #160075;
+        }
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 15px 0px 15px 0px;
+            background-color: #160075;
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 12px;
+            }
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div id="title-headings">
+<h1>COOKIE CUTTER</h1>
+<img id="icon" src="../images/cookie_icon.png" alt="cookie icon">
+</div>
+<h2 id="title">SETTINGS</h2>
+<label>
+    <span id="whitelist_label">List of all whitelisted websites, one website per line:</span><br>
+    <textarea id="whitelist" placeholder=
+            "www.website.com
+www.website.com
+"></textarea>
+</label>
+<label>
+    <input type="checkbox" id="status_indicators">
+    <span id="status_indicators_label">Status Indicators</span>
+</label>
+<input type="button" id="save" value="Confirm Settings" style="min-width: 100px">
+<div id="status_saved" style="display: none; color: green; padding-left: 5px"></div>
+<footer id="footer">
+    <a href="www.github.com/mansi808/cookie-cutter">Github repo</a>
+</footer>
+<script src="./options.js"></script>
+</body>
+</html>
