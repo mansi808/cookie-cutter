@@ -37,8 +37,6 @@ function saveOptions() {
     });
 }
 
-
-
 function restoreOptions() {
     chrome.storage.local.get(
         { settings: { whitelistedDomains: {}, statusIndicators: true } },
@@ -59,5 +57,3 @@ document.getElementById("status_saved").textContent =
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
 document.getElementById("save").addEventListener("click", saveOptions);
-
-

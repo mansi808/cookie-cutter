@@ -97,19 +97,20 @@
         }
 
     </style>
+    <script src="options.js" defer></script>
 </head>
 <body>
 <div id="title-headings">
 <h1>COOKIE CUTTER</h1>
-<img id="icon" src="../images/cookie_icon.png" alt="cookie icon">
+<img id="icon" src="/images/cookie_icon.png" alt="cookie icon">
 </div>
 <h2 id="title">SETTINGS</h2>
 <label>
     <span id="whitelist_label">List of all whitelisted websites, one website per line:</span><br>
     <textarea id="whitelist" placeholder=
             "www.website.com
-www.website.com
-"></textarea>
+            www.website.com"
+    ></textarea>
 </label>
 <label>
     <input type="checkbox" id="status_indicators">
@@ -118,8 +119,7 @@ www.website.com
 <input type="button" id="save" value="Confirm Settings" style="min-width: 100px">
 <div id="status_saved" style="display: none; color: green; padding-left: 5px"></div>
 <footer id="footer">
-    <a href="www.github.com/mansi808/cookie-cutter">Github repo</a>
+    <a href="">Github repo</a>
 </footer>
-<script src="./options.js"></script>
 </body>
 </html>

@@ -31,9 +31,8 @@
     "webRequest",
     "declarativeNetRequestWithHostAccess",
     "webNavigation",
-    "scripting",
-   "cookies"
- ],
+    "scripting"
+  ],
   "icons": {
     "16": "images/cookie_icon.png",
     "32": "images/cookie_icon.png",

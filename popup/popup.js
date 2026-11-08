@@ -1,9 +1,6 @@
-
-
 var popUpEl;
 popUpEl = document.getElementById("banner-preferences");
 var options = document.getElementById("options");
-
 
 // function updateBackendBannerPreferences() {
 //
@@ -21,8 +18,6 @@ var options = document.getElementById("options");
 //     // Object.assign(showPopUpMessage, data.popUp);
 // }
 
-
-
 if (popUpEl) {
     console.log("hello");
     popUpEl.onclick = () => {
@@ -30,10 +25,10 @@ if (popUpEl) {
             popUp: popUpEl.value,
         };
         if (popUpEl.checked) {
-            chrome.runtime.sendMessage({event:'checked', prefs});
+            chrome.runtime.sendMessage({ event: "checked", prefs });
             console.log("BannerShown");
         } else {
-            chrome.runtime.sendMessage({event:'unchecked', prefs});
+            chrome.runtime.sendMessage({ event: "unchecked", prefs });
             console.log("BannerNotShown");
         }
     };
@@ -44,12 +39,12 @@ chrome.storage.local.get(["popUp"], (result) => {
     if (popUp) {
         popUpEl.value = popUp;
     }
-})
+});
 
 if (options) {
-
     options.addEventListener("click", function () {
-        chrome.runtime.sendMessage({
+        chrome.runtime.sendMessage(
+            {
                 command: "open_options_page",
             },
             () => window.close()
@@ -57,10 +52,10 @@ if (options) {
     });
 }
 
-options.addEventListener('click', function() {
+options.addEventListener("click", function () {
     if (chrome.runtime.openOptionsPage) {
         chrome.runtime.openOptionsPage();
     } else {
-        window.open(chrome.runtime.getURL('options.html'));
+        window.open(chrome.runtime.getURL("options.html"));
     }
 });
