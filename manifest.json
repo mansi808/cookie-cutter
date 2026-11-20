@@ -11,8 +11,7 @@
     {
       "matches": ["https://*/*"],
       "js": ["scripts/cookieBannerIdAttributes2.js",
-        "scripts/cookieBannerIdAttributes.js",
-        "scripts/content.js"]
+        "scripts/cookieBannerIdAttributes.js","scripts/content.js"]
     }
   ],
   "host_permissions": [
@@ -25,13 +24,8 @@
     "type": "module"
   },
  "permissions": [
-    "tabs",
-    "storage",
-    "notifications",
-    "webRequest",
-    "declarativeNetRequestWithHostAccess",
-    "webNavigation",
-    "scripting"
+    "declarativeNetRequest",
+    "storage"  
   ],
   "icons": {
     "16": "images/cookie_icon.png",

@@ -14085,5 +14085,5 @@ const cookieBannerIdAttributes2 = [
     "footer ~ div[id*=\"cookie-bar\"] {\ndisplay: none !important;height: 0 !important;\nz-index: -99999 !important;\nvisibility: hidden !important;\nwidth: 0 !important;\n\noverflow: hidden !important;\n}",
     ".dv-accept-cookies:not(body):not(html) {\ndisplay: none !important;\nheight: 0 !important;\nz-index: -99999 !important;\nvisibility: hidden !important;\nwidth: 0 !important;\noverflow: hidden !important;\n}",
     ".popup-wrapper"
-]
+];
 

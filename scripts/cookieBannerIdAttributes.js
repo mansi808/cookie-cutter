@@ -64,4 +64,4 @@ const cookieBannerIdAttributes = [
 ".privacy-cp-wall",
 ".chefcookie",
 "#cookiesjsr"
-]
+];
