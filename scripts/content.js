@@ -187,7 +187,7 @@ function getShowPopUp() {
 }
 
 function getEnforceConsent() {
-    return isWhitelisted(hostname);
+    return !isWhitelisted(hostname);
 }
 
 function isWhitelisted(hostname) {
@@ -204,12 +204,13 @@ function isWhitelisted(hostname) {
                     console.log(domain);
                     console.log(hostname);
                     if (domain === hostname) {
-                        console.log("Do not perform any operations ");
-                        return false;
+                        console.log("Do not perform any operations, host in whitelist");
+                        return true;
                     }
                 }
             }
-            return true;
+            console.log("Perform operations, host not in whitelist!")
+            return false;
         }
     );
 }
