@@ -10,9 +10,9 @@
   "content_scripts": [
     {
       "matches": ["https://*/*"],
-      "js": [ "scripts/content.js",
-        "scripts/id_attributes.js",
-        "scripts/websites_id_attributes.js"]
+      "js": ["scripts/cookieBannerIdAttributes2.js",
+        "scripts/cookieBannerIdAttributes.js",
+        "scripts/content.js"]
     }
   ],
   "host_permissions": [

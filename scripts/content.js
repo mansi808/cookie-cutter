@@ -165,7 +165,8 @@ const confirmOpts = [
 const hostname = document.location.hostname.replace(/^w{2,3}\d*\./i, "");
 const showPopUpMessage = getShowPopUp();
 const enforceConsent = getEnforceConsent();
-const idAttributes = [websites_id_attributes, id_attributes];
+const idAttributes = [cookieBannerIdAttributes, cookieBannerIdAttributes2];
+const YES = "YES";
 console.log("hostname", hostname);
 
 let isBannerFound = false;
@@ -175,7 +176,7 @@ let hasMoreOptions = false;
 function getShowPopUp() {
     chrome.storage.local.get(["popUp"], (result) => {
         console.log("storage.get: show Popup", result);
-        if (result.popUp.toLowerCase() === "yes") {
+        if (result.popUp.toUpperCase() === YES) {
             console.log("PopUp will be shown");
             return true;
         } else {
