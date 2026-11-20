@@ -161,10 +161,13 @@ const confirmOpts = [
 // TO DO: define showPopUp as a constant which changes only when interacted via the popup (rather than on every window reload)
 // TO DO: traverse through dictionary arrays more efficiently
 // TO DO: load pages before executing the script (update manifest.json to execute at document.end) instead of using a timer
+// TO DO: fix showPopUp method, currently rendering and intialising of popup values has bugs
+// TO DO: fix bugs on enforceConsent, returns as true always because of asynchronous nature
 
 const hostname = document.location.hostname.replace(/^w{2,3}\d*\./i, "");
+const enforceConsent = getEnforceConsent(hostname);
+
 const showPopUpMessage = getShowPopUp();
-const enforceConsent = getEnforceConsent();
 const idAttributes = [cookieBannerIdAttributes, cookieBannerIdAttributes2];
 const YES = "YES";
 console.log("hostname", hostname);
@@ -237,12 +240,13 @@ function showMessage(text, backgroundColour) {
 }
 
 //Searches for a cookie banner
-function checkForCookieBanner() {
-    //Select all elements on the page
-    // const allElements = document.querySelectorAll('*');
+function getCookieBannerEl() {
+    //Select all elements on the page which have an id and className
+    // const allElements = document.body.querySelectorAll("[id], [class]");
     let foundMatchElement = null; //Initialise variable to store the cookie banner if found
     let i = 0;
 
+    // Previous method: search cookie baner by travesing through the arrays (now Sets)
     while (i < idAttributes.length && !foundMatchElement && !isBannerFound) {
         const result = searchCookieBannersById(idAttributes[i]);
         i++;
@@ -506,7 +510,7 @@ function isVisited(hostname) {
 }
 
 function main() {
-    const cookieBanner = checkForCookieBanner(); // Call checkForCookieBanner() and store the returned value in cookieBanner
+    const cookieBanner = getCookieBannerEl(); // Call getCookieBannerEl() and store the returned value in cookieBanner
     // if return value is not null
     if (cookieBanner) {
         if (clickRejectButton(cookieBanner) === false) {
