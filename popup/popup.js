@@ -1,5 +1,5 @@
-var popUpEl;
-popUpEl = document.getElementById("banner-preferences");
+// TO DO: Fix rendering of the popUpEl as they reload everytime the popUp is opened and reinitialise the declared variable
+var popUpEl = document.getElementById("banner-preferences");
 var options = document.getElementById("options");
 
 // function updateBackendBannerPreferences() {
@@ -19,7 +19,6 @@ var options = document.getElementById("options");
 // }
 
 if (popUpEl) {
-    console.log("hello");
     popUpEl.onclick = () => {
         const prefs = {
             popUp: popUpEl.value,
@@ -35,6 +34,7 @@ if (popUpEl) {
 }
 
 chrome.storage.local.get(["popUp"], (result) => {
+    console.get(popUp);
     const { popUp } = result;
     if (popUp) {
         popUpEl.value = popUp;
